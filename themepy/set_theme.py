@@ -14,18 +14,8 @@ def list_themes():
 
 
 def set_params(self, theme_name=None):
-    """
-    use as:
 
-    set_theme("opta") #standard Opta theme
-    set_theme("OptaPro") #OptaPro theme. accepts upper or lowercase
-    set_theme("opta-dark") #Opta with dark colours
-    set_theme("statsperform") #Statsperform vanilla theme
-    set_theme() # revert to default theme.
 
-    requires matplotlib to run
-
-"""
 
     self.theme_name = None
 
