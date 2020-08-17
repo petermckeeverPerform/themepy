@@ -4,7 +4,11 @@ import os
 import ast
 import os.path as path
 
+
 def list_themes():
+    """
+    Displays list of current themes found in themes folder
+    """
 
     theme_list = os.listdir(path.dirname(path.abspath(__file__))+'/themes/')
     theme_list = [x.split(".")[0] for x in theme_list if "__" not in x in theme_list][1:]
@@ -12,10 +16,17 @@ def list_themes():
     return theme_list
 
 
-
 def set_params(self, theme_name=None):
+    """
+    Passes values from our selected theme (or defaults)
+    Input
+    =====
+    theme_name: str - name of theme to use
 
-
+    Returns
+    =======
+    changed properties of instantiated class
+    """
 
     self.theme_name = None
 
@@ -34,9 +45,8 @@ def set_params(self, theme_name=None):
     elif theme_name.lower() in list_themes():
         theme_dict = (ast.literal_eval(
                         open(path.dirname(path.abspath(__file__))+"/themes/" +
-                            theme_name +
-                            ".txt", 'r').read())
-                        )
+                             theme_name +
+                             ".txt", 'r').read()))
 
         self.theme_name = theme_name
         mpl.rcParams['xtick.color'] = theme_dict['xtick.color']
@@ -55,8 +65,7 @@ def set_params(self, theme_name=None):
         i = 0
         for i in range(len(theme_dict['cycler-prop-cycles'])):
             c_cycler.append(theme_dict['cycler-prop-cycles'][i])
-        mpl.rcParams['axes.prop_cycle'] = (cycler
-                                            (color=c_cycler))
+        mpl.rcParams['axes.prop_cycle'] = (cycler(color=c_cycler))
         mpl.rcParams['axes.titlesize'] = 20
         mpl.rcParams['axes.titleweight'] = "regular"
 
@@ -71,5 +80,5 @@ def set_params(self, theme_name=None):
 
     else:
         raise NameError("This theme does not exist. Choose one of the existing themes - found by running themepy.list_themes()")
-    
+
     return self
