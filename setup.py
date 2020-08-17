@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="themepy",
-    version = "0.1",
+    version = "0.0.1",
     author = "Peter McKeever",
     author_email = "",
     description = "a tools suite to manage themes in matplotlib",
