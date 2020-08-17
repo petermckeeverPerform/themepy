@@ -1,0 +1,9 @@
+notebooks/
+*.DS_Store/
+*.ipynb_checkpoints/
+*.csv
+*.xlsm
+*.png
+*.svg
+*__pycache__
+*.vscode/
