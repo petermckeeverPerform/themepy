@@ -49,25 +49,19 @@ def set_params(self, theme_name=None):
                              ".txt", 'r').read()))
 
         self.theme_name = theme_name
-        mpl.rcParams['xtick.color'] = theme_dict['xtick.color']
-        mpl.rcParams['ytick.color'] = theme_dict['ytick.color']
-        mpl.rcParams['font.family'] = theme_dict['font.family']
-        mpl.rcParams['text.color'] = theme_dict['text.color']
-        mpl.rcParams['figure.facecolor'] = theme_dict['figure.facecolor']
-        mpl.rcParams['figure.edgecolor'] = theme_dict['figure.edgecolor']
-        mpl.rcParams['axes.facecolor'] = theme_dict['axes.facecolor']
-        mpl.rcParams['axes.edgecolor'] = theme_dict['axes.edgecolor']
-        mpl.rcParams['savefig.edgecolor'] = theme_dict['savefig.edgecolor']
-        mpl.rcParams['savefig.facecolor'] = theme_dict['savefig.facecolor']
-        mpl.rcParams['grid.color'] = theme_dict['grid.color']
+        param_keys = theme_dict.keys()
+        param_vals = theme_dict.values()
+        for key, val in zip(param_keys, param_vals):
+            if key == 'cycler-prop-cycles':
+                pass
+            else:
+                mpl.rcParams[key] = val
 
         c_cycler = []
         i = 0
         for i in range(len(theme_dict['cycler-prop-cycles'])):
             c_cycler.append(theme_dict['cycler-prop-cycles'][i])
-        mpl.rcParams['axes.prop_cycle'] = (cycler(color=c_cycler))
-        mpl.rcParams['axes.titlesize'] = 20
-        mpl.rcParams['axes.titleweight'] = "regular"
+
 
         self.background = mpl.rcParams['figure.facecolor']
         self.primary_color = c_cycler[0]

@@ -1,5 +1,4 @@
 {
-    'theme-name'  : 'sample-light',
     'xtick.color' : "black",
     'ytick.color' : "black",
     'text.color' : "black",
