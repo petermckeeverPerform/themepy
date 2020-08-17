@@ -4,6 +4,17 @@ An open source theme selector / creator and aesthetic manager for Matplotlib. Th
 
 Taking a class-based approach, themes can now hold state. This makes it easier to keep track of colors and params that are usually set as variables, hardcoded, or added as args to matplotlib/pyplot functions. This allows us to reduce complexity of setting custom fonts etc... and gives us flexibility in moving between themes, not to mention the reduced typing by breaking down our interaction with matplotlib's rcParams into declarative functions.
 
+# Contributing
+
+Contributors are welcome to this pacakge. The key idea behind this is to simplify interaction with matplotlib and have usable themes and modifications through declarative language. To acheive this each function should look to do just one thing and params for each function should be relatively few.
+
+All contributing is handled through PRs (Pull Requests). In order to contribute users must:
+1. Fork this repo and create branch from `master`
+2. Clone the environment
+3. Make changes to code or additions to codebase / new themes
+4. Test these to ensure that they function as expected
+5. Commit code and create a pull request outlining changes made
+
 # Examples
 
 We can get started straight away by instantiating a Theme class. We can do this without passing a specific theme, this will use matplotlib's defaults.

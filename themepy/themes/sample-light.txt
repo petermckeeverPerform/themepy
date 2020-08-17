@@ -2,7 +2,6 @@
     'theme-name'  : 'sample-light',
     'xtick.color' : "black",
     'ytick.color' : "black",
-    'font.family' : "Alegreya Sans",
     'text.color' : "black",
     'figure.facecolor' : "#F0F0F0",
     'figure.edgecolor' : "#F0F0F0",
