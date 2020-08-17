@@ -8,16 +8,37 @@ Taking a class-based approach, themes can now hold state. This makes it easier t
 
 Contributors are welcome to this pacakge. The key idea behind this is to simplify interaction with matplotlib and have usable themes and modifications through declarative language. To acheive this each function should look to do just one thing and params for each function should be relatively few.
 
-All contributing is handled through PRs (Pull Requests). In order to contribute users must:
+All contributing is handled through PRs (Pull Requests). In order to contri bute users must:
 1. Fork this repo and create branch from `master`
-2. Clone the environment
+2. Clone the environment 
 3. Make changes to code or additions to codebase / new themes
 4. Test these to ensure that they function as expected
 5. Commit code and create a pull request outlining changes made
 
+### Contributing Themes
+The main goal of this package is to have professional, well thought out themes available to all. If you would like to contribute a theme, look in the themes folder for a sample of how they should look. Including fonts in here is okay, but please only include fonts that are free and publicly available. If a font is included, please provide a url to the source in the PR. Similar to the above, to contribute themes:
+
+1. Fork this repo and create branch from `master`
+2. Clone the environment 
+3. Add you theme .txt file to the themes folder
+4. Test these to ensure that they function as expected
+5. Commit code and create a pull request outlining your new theme, including its name. Do not commit images.
+
+
+To get started after cloning, in the root of the repo, create a `notebooks` folder and inside create a new jupyter notebook. Add the following:
+
+```
+import sys
+sys.path.append("..")
+import themepy
+```
+
+
+
+
 # Examples
 
-We can get started straight away by instantiating a Theme class. We can do this without passing a specific theme, this will use matplotlib's defaults.
+This is still in early development. A python version >= 3.7 is required (just clone the env). This package is not yet available on PyPi. We can get started straight away by instantiating a Theme class. We can do this without passing a specific theme, this will use matplotlib's defaults.
 
 ```
 import matplotlib.pyplot as plt
