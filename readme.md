@@ -1,3 +1,5 @@
+[![PyPI version](https://badge.fury.io/py/themepy.png)](https://badge.fury.io/py/themepy)
+
 # ThemePy
 
 An open source theme selector / creator and aesthetic manager for Matplotlib. This wrapper is intended to create an open-source community-driven theme library for matplotlib. The aim is to simplify the process of customising matplotlib plots and to enable users who are relatively new to python or matplotlib to move beyond the default plotting params we are given with matplotlib.
@@ -38,7 +40,9 @@ import themepy
 
 # Examples
 
-This is still in early development. A python version >= 3.7 is required (just clone the env). This package is not yet available on PyPi. We can get started straight away by instantiating a Theme class. We can do this without passing a specific theme, this will use matplotlib's defaults.
+This is still in early development. A python version >= 3.7 is required (just clone the env). There is an unstable version (0.0.8) available through pip - `pip install thempy`.
+
+We can get started straight away by instantiating a Theme class. We can do this without passing a specific theme, this will use matplotlib's defaults.
 
 ```
 import matplotlib.pyplot as plt
