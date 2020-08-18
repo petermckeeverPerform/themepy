@@ -10,7 +10,7 @@ Contributors are welcome to this pacakge. The key idea behind this is to simplif
 
 All contributing is handled through PRs (Pull Requests). In order to contri bute users must:
 1. Fork this repo and create branch from `master`
-2. Clone the environment 
+2. Clone the environment - `conda env create -f environment.yml`
 3. Make changes to code or additions to codebase / new themes
 4. Test these to ensure that they function as expected
 5. Commit code and create a pull request outlining changes made
