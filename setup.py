@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="themepy",
-    version ="0.0.5",
+    version ="0.0.7",
     author ="Peter McKeever",
     author_email ="hello@petermckeever.com",
     description ="a tools suite to manage themes in matplotlib",
