@@ -182,6 +182,7 @@ to do
 - theme colors should be appended to the start of cycler instead of replacing
 - add add_theme() function
 - add remove_theme() function
-- Docstring on functions
+- Docstring on Theme class
 - Add Adding Themes section to readme
 - Testing script
+- Apply code formatting and guidelines for contributors
