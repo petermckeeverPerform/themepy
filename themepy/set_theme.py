@@ -11,8 +11,9 @@ def list_themes():
     """
 
     theme_list = os.listdir(path.dirname(path.abspath(__file__))+'/themes/')
-    theme_list = [x.split(".")[0] for x in theme_list if "__" not in x in theme_list][1:]
-
+    # only list .txt files and  drop .txt extension from name
+    theme_list = [x.split(".")[0] for x in theme_list if ".txt" in x in theme_list]
+    
     return theme_list
 
 
