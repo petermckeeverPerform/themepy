@@ -178,7 +178,6 @@ plt.show()
 to do
 # To Do:
 
-
 - theme colors should be appended to the start of cycler instead of replacing
 - add add_theme() function
 - add remove_theme() function
@@ -186,3 +185,5 @@ to do
 - Add Adding Themes section to readme
 - Testing script
 - Apply code formatting and guidelines for contributors
+
+- ?? List/set theme(s) function read from git repo with fallback to local `themes` dir, possibly with the option to pull latest theme files to local themes directory

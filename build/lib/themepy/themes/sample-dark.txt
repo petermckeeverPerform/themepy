@@ -1,0 +1,17 @@
+{
+    'xtick.color' : "w",
+    'ytick.color' : "w",
+    'text.color' : "w",
+    'figure.facecolor' : "#404040",
+    'figure.edgecolor' : "#404040",
+    'axes.facecolor' : "#404040",
+    'axes.edgecolor' : "w",
+    'savefig.edgecolor' : "#404040",
+    'savefig.facecolor' : "#404040",
+    'grid.color' : "lightgrey",
+    'axes.titlesize' : 20,
+    'cycler-prop-cycles' : ['#00aeef', '#f7914d',
+                                 'g', 'r',
+                                 'purple', 'y',
+                                 'pink', 'k'],
+}
