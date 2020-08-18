@@ -1,12 +1,12 @@
 notebooks/
-*.DS_Store/
-*.ipynb_checkpoints/
+build/
+.ipynb_checkpoints/
 *.csv
 *.xlsm
 *.png
 *.svg
 *__pycache__
-*.vscode/
+.vscode/
 *.pyc
 themepy.egg-info
 themepy.egg-info/
@@ -15,4 +15,3 @@ env
 .DS_Store
 themepy/.DS_Store
 dist/.DS_Store
-build/
