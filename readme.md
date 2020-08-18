@@ -1,4 +1,4 @@
-[![PyPI version](https://badge.fury.io/py/themepy.png)](https://badge.fury.io/py/themepy)
+[![](https://img.shields.io/badge/PyPi%20latest%20relsease-v0.0.8-brightgreen)](https://pypi.org/project/themepy/)
 
 # ThemePy
 
