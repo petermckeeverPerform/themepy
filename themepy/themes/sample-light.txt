@@ -6,6 +6,7 @@
     'figure.edgecolor' : "#F0F0F0",
     'axes.facecolor' : "#F0F0F0",
     'axes.edgecolor' : "black",
+    'axes.labelcolor':'black',
     'savefig.edgecolor' : "#F0F0F0",
     'savefig.facecolor' : "#F0F0F0",
     'grid.color' : "#083441",
