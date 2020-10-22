@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/PyPi%20latest%20relsease-v0.0.9-brightgreen)](https://pypi.org/project/themepy/)
+[![](https://img.shields.io/badge/PyPi%20latest%20relsease-v0.1.0-brightgreen)](https://pypi.org/project/themepy/)
 
 # ThemePy
 
