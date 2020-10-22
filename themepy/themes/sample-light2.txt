@@ -1,0 +1,18 @@
+{
+    'xtick.color' : "black",
+    'ytick.color' : "black",
+    'text.color' : "black",
+    'figure.facecolor' : "#f5f4e6",
+    'figure.edgecolor' : "#f5f4e6",
+    'axes.facecolor' : "#f5f4e6",
+    'axes.edgecolor' : "black",
+    'axes.labelcolor':'black',
+    'savefig.edgecolor' : "#f5f4e6",
+    'savefig.facecolor' : "#f5f4e6",
+    'grid.color' : "#083441",
+    'axes.titlesize' : 20,
+    'cycler-prop-cycles' : ['#00aeef', '#f7914d',
+                                 'g', 'r',
+                                 'purple', 'y',
+                                 'pink', 'k'],
+}
