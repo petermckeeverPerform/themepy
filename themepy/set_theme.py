@@ -68,6 +68,7 @@ def set_params(self, theme_name=None):
         for i in range(len(theme_dict['cycler-prop-cycles'])):
             c_cycler.append(theme_dict['cycler-prop-cycles'][i])
 
+        mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=c_cycler)
 
         self.background = mpl.rcParams['figure.facecolor']
         self.primary_color = c_cycler[0]
@@ -97,6 +98,7 @@ def set_params(self, theme_name=None):
         for i in range(len(theme_dict['cycler-prop-cycles'])):
             c_cycler.append(theme_dict['cycler-prop-cycles'][i])
 
+        mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=c_cycler)
 
         self.background = mpl.rcParams['figure.facecolor']
         self.primary_color = c_cycler[0]
