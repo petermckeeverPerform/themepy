@@ -1,0 +1,19 @@
+{
+    'xtick.color' : "#323034",
+    'ytick.color' : "#323034",
+    'text.color' : "#323034",
+    'figure.facecolor' : "#F3EDDF",
+    'figure.edgecolor' : "#F3EDDF",
+    'axes.facecolor' : "#F3EDDF",
+    'axes.edgecolor' : "black",
+    'axes.labelcolor':'black',
+    'savefig.edgecolor' : "#F3EDDF",
+    'savefig.facecolor' : "#F3EDDF",
+    'grid.color' : "#323034",
+    'axes.titlesize' : 20,
+    'cycler-prop-cycles' : ['#000F55', '#D22042',
+                                 '#03873C', 'r',
+                                 'purple', 'y',
+                                 'pink', 'k'],
+    'font.family': 'Cedarville Cursive'
+}
