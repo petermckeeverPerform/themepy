@@ -1,0 +1,21 @@
+{
+    'xtick.color' : "white",
+    'ytick.color' : "white",
+    'text.color' : "white",
+    'figure.facecolor' : "#2E3561",
+    'figure.edgecolor' : "#2E3561",
+    'axes.facecolor' : "#2E3561",
+    'axes.edgecolor' : "white",
+    'axes.labelcolor':'white',
+    'savefig.edgecolor' : "#2E3561",
+    'savefig.facecolor' : "#2E3561",
+    'grid.color' : "#323034",
+    'axes.titlesize' : 20,
+    'cycler-prop-cycles' : ['#000F55', '#D22042',
+                                 '#03873C', 'r',
+                                 'purple', 'y',
+                                 'pink', 'k'],
+    'font.family': 'Neucha'
+}
+
+
