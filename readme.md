@@ -21,7 +21,7 @@ All contributing is handled through PRs (Pull Requests). In order to contri bute
 The main goal of this package is to have professional, well thought out themes available to all. If you would like to contribute a theme, look in the themes folder for a sample of how they should look. Including fonts in here is okay, but please only include fonts that are free and publicly available. If a font is included, please provide a url to the source in the PR. Similar to the above, to contribute themes:
 
 1. Fork this repo and create branch from `master`
-2. Clone the environment 
+2. Clone the environment
 3. Add you theme .txt file to the themes folder
 4. Test these to ensure that they function as expected
 5. Commit code and create a pull request outlining your new theme, including its name. Do not commit images.
@@ -51,7 +51,7 @@ import themepy
 theme = themepy.Theme()
 ```
 
-if we created a plot it would look like a regular matplotlib plot. 
+if we created a plot it would look like a regular matplotlib plot.
 
 ```
 # creating random data
@@ -76,9 +76,24 @@ ax.set_title("This is a title using {} theme".format(theme.theme_name),
 
 
 ax.grid(linewidth=.25, zorder=1)
+# creating random data
+np.random.seed(402)
+x = np.random.uniform(0,1,50)
+y = np.random.uniform(0,1,50)
 
+theme.set_theme('gadfly')
+
+# create plot
+fig, ax = plt.subplots(figsize=(8,8))
+ax.set_title("This is a title using {} theme".format(theme.theme_name), loc="left")
+ax.grid(linewidth=.25, zorder=1)
+ax.scatter(x, y, s=400, zorder=2)
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+
+plt.show()
 ax.scatter(x,y,
-           color=theme.primary_color, # the first colour in cycle, our primary color 
+           color=theme.primary_color, # the first colour in cycle, our primary color
            edgecolors=theme.background, # our background colour (figure.facecolor)
            s=400,
            zorder=2)
@@ -119,7 +134,7 @@ ax.set_title("This is a title using {} theme".format(theme.theme_name),
 ax.grid(linewidth=.25, zorder=1)
 
 ax.scatter(x,y,
-           color=theme.primary_color, # the first colour in cycle, our primary color 
+           color=theme.primary_color, # the first colour in cycle, our primary color
            edgecolors=theme.background, # our background colour (figure.facecolor)
            s=400,
            zorder=2)
@@ -147,7 +162,7 @@ y = np.random.uniform(0,1,50)
  .set_theme('sample-dark')
  .set_font("Century Gothic")
  .set_pips(False)
- .set_spines("off", which=["top","right"]) 
+ .set_spines("off", which=["top","right"])
  .set_ticklabel_size(12)
 )
 
@@ -161,7 +176,7 @@ ax.set_title("This is a title using {} theme".format(theme.theme_name),
 ax.grid(linewidth=.25, zorder=1)
 
 ax.scatter(x,y,
-           color=theme.primary_color, # the first colour in cycle, our primary color 
+           color=theme.primary_color, # the first colour in cycle, our primary color
            edgecolors=theme.background, # our background colour (figure.facecolor)
            s=400,
            zorder=2)
@@ -175,7 +190,27 @@ plt.show()
 
 ![](sample/adjusted_mpl_dark.png)
 
+It also includes the Gadfly theme as present in [this blog post](https://towardsdatascience.com/a-new-plot-theme-for-matplotlib-gadfly-2cffc745ff84)
 
+```python
+# creating random data
+np.random.seed(402)
+x = np.random.uniform(0,1,50)
+y = np.random.uniform(0,1,50)
+
+theme.set_theme('gadfly')
+
+# create plot
+fig, ax = plt.subplots(figsize=(8,8))
+ax.set_title("This is a title using {} theme".format(theme.theme_name), loc="left")
+ax.grid(linewidth=.25, zorder=1)
+ax.scatter(x, y, s=400, zorder=2)
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+
+plt.show()
+```
+![](sample/gadfly_mpl.png)
 
 # Adding Themes
 
