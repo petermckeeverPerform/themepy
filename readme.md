@@ -64,7 +64,7 @@ y = np.random.uniform(0,1,50)
  .set_theme() # we could change to a different theme here. Passing no theme resets theme to default matplotlib
  .set_font() # we could set a new font here
  .set_pips() # we could set the tick marks on the x and y axis on or off here
- .set_spines() # we could show or hide the boarders of the plot here
+ .set_spines() # we could show or hide the borders of the plot here
  .set_ticklabel_size() # we could change the size of the x and y tick labels here
 )
 
