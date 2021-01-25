@@ -81,17 +81,6 @@ np.random.seed(402)
 x = np.random.uniform(0,1,50)
 y = np.random.uniform(0,1,50)
 
-theme.set_theme('gadfly')
-
-# create plot
-fig, ax = plt.subplots(figsize=(8,8))
-ax.set_title("This is a title using {} theme".format(theme.theme_name), loc="left")
-ax.grid(linewidth=.25, zorder=1)
-ax.scatter(x, y, s=400, zorder=2)
-ax.set_xlim(0,1)
-ax.set_ylim(0,1)
-
-plt.show()
 ax.scatter(x,y,
            color=theme.primary_color, # the first colour in cycle, our primary color
            edgecolors=theme.background, # our background colour (figure.facecolor)
