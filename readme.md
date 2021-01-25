@@ -21,7 +21,7 @@ All contributing is handled through PRs (Pull Requests). In order to contri bute
 The main goal of this package is to have professional, well thought out themes available to all. If you would like to contribute a theme, look in the themes folder for a sample of how they should look. Including fonts in here is okay, but please only include fonts that are free and publicly available. If a font is included, please provide a url to the source in the PR. Similar to the above, to contribute themes:
 
 1. Fork this repo and create branch from `master`
-2. Clone the environment 
+2. Clone the environment
 3. Add you theme .txt file to the themes folder
 4. Test these to ensure that they function as expected
 5. Commit code and create a pull request outlining your new theme, including its name. Do not commit images.
@@ -29,7 +29,7 @@ The main goal of this package is to have professional, well thought out themes a
 
 To get started after cloning, in the root of the repo, create a `notebooks` folder and inside create a new jupyter notebook. Add the following:
 
-```
+```python
 import sys
 sys.path.append("..")
 import themepy
@@ -44,16 +44,16 @@ This is still in early development. A python version >= 3.7 is required (just cl
 
 We can get started straight away by instantiating a Theme class. We can do this without passing a specific theme, this will use matplotlib's defaults.
 
-```
+```python
 import matplotlib.pyplot as plt
 import themepy
 
 theme = themepy.Theme()
 ```
 
-if we created a plot it would look like a regular matplotlib plot. 
+if we created a plot it would look like a regular matplotlib plot.
 
-```
+```python
 # creating random data
 np.random.seed(402)
 x = np.random.uniform(0,1,50)
@@ -78,7 +78,7 @@ ax.set_title("This is a title using {} theme".format(theme.theme_name),
 ax.grid(linewidth=.25, zorder=1)
 
 ax.scatter(x,y,
-           color=theme.primary_color, # the first colour in cycle, our primary color 
+           color=theme.primary_color, # the first colour in cycle, our primary color
            edgecolors=theme.background, # our background colour (figure.facecolor)
            s=400,
            zorder=2)
@@ -94,7 +94,7 @@ plt.show()
 
 However, we can now make some quick alterations to our plot
 
-```
+```python
 
 # creating random data
 np.random.seed(402)
@@ -119,7 +119,7 @@ ax.set_title("This is a title using {} theme".format(theme.theme_name),
 ax.grid(linewidth=.25, zorder=1)
 
 ax.scatter(x,y,
-           color=theme.primary_color, # the first colour in cycle, our primary color 
+           color=theme.primary_color, # the first colour in cycle, our primary color
            edgecolors=theme.background, # our background colour (figure.facecolor)
            s=400,
            zorder=2)
@@ -135,7 +135,7 @@ plt.show()
 `theme.title_font` and `theme.body_font` take the font passed either through the theme or through `theme.set_font`, but they can also be set individually.
 
 There are two sample themes included. Dark version shown below:
-```
+```python
 
 # creating random data
 np.random.seed(402)
@@ -147,7 +147,7 @@ y = np.random.uniform(0,1,50)
  .set_theme('sample-dark')
  .set_font("Century Gothic")
  .set_pips(False)
- .set_spines("off", which=["top","right"]) 
+ .set_spines("off", which=["top","right"])
  .set_ticklabel_size(12)
 )
 
@@ -161,7 +161,7 @@ ax.set_title("This is a title using {} theme".format(theme.theme_name),
 ax.grid(linewidth=.25, zorder=1)
 
 ax.scatter(x,y,
-           color=theme.primary_color, # the first colour in cycle, our primary color 
+           color=theme.primary_color, # the first colour in cycle, our primary color
            edgecolors=theme.background, # our background colour (figure.facecolor)
            s=400,
            zorder=2)
