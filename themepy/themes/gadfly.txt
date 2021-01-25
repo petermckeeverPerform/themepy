@@ -1,0 +1,69 @@
+{
+    "lines.linewidth" : 2,
+
+    "lines.markeredgecolor": "white",
+    "lines.markeredgewidth": 1,
+    "lines.markersize": 7,
+
+    "patch.linewidth": 1,
+    "patch.facecolor": "C0",
+    "patch.edgecolor": "black",
+
+    "boxplot.patchartist": True,
+
+    "boxplot.flierprops.color": "C0",
+    "boxplot.flierprops.marker": "o",
+    "boxplot.flierprops.markerfacecolor": "auto",
+    "boxplot.flierprops.markeredgecolor": "white",
+    "boxplot.flierprops.markersize": 7,
+    "boxplot.flierprops.linestyle": "none",
+    "boxplot.flierprops.linewidth": 1.0,
+
+    "boxplot.boxprops.color": "#9ae1f9",
+    "boxplot.boxprops.linewidth": 0,
+    "boxplot.boxprops.linestyle": "-",
+
+    "boxplot.whiskerprops.color": "C0",
+    "boxplot.whiskerprops.linewidth": 1.0,
+    "boxplot.whiskerprops.linestyle": "-",
+
+    "boxplot.capprops.color": "C0",
+    "boxplot.capprops.linewidth": 1.0,
+    "boxplot.capprops.linestyle": "-",
+
+    "boxplot.medianprops.color": "#9ae1f9",
+    "boxplot.medianprops.linewidth": 1,
+    "boxplot.medianprops.linestyle": "-",
+
+    "boxplot.meanprops.color": "C1",
+    "boxplot.meanprops.marker": "^",
+    "boxplot.meanprops.markerfacecolor": "C1",
+    "boxplot.meanprops.markeredgecolor": "C1",
+    "boxplot.meanprops.markersize":  7,
+    "boxplot.meanprops.linestyle": "--",
+    "boxplot.meanprops.linewidth": 1.0,
+
+    "text.color": "#707074",
+
+    "axes.edgecolor": "#D0D0E0",
+    "axes.grid": True,
+    "axes.grid.axis": "both",
+    "axes.titlesize": 18,
+    "axes.labelsize": 14,
+    "axes.labelcolor": "#707074",
+
+    "axes.spines.left": False,
+    "axes.spines.bottom": False,
+    "axes.spines.top": False,
+    "axes.spines.right": False,
+    "cycler-prop-cycles": ['#00BEFF', '#D4CA3A', '#FF6DAE', '#67E1B5', '#EBACFA', '#9E9E9E', '#F1988E', '#5DB15A', '#E28544', '#52B8AA'],
+
+    "xtick.color": "#707074",
+    "xtick.labelsize": 12,
+    "ytick.color": "#707074",
+    "ytick.labelsize": 12,
+
+    "grid.color": "#93939c",
+    "grid.linestyle": "--",
+    "grid.alpha":   0.2,
+}
