@@ -1,5 +1,6 @@
 import matplotlib as mpl
 from .set_theme import set_params, list_themes
+import os.path as path
 
 
 class Theme:
@@ -211,3 +212,31 @@ class Theme:
             raise KeyError("{} is not a valid arg. Must be 'both' or one of 'x' or 'y'".format(which))
 
         return self
+
+    def set_updated_rcparams(self):
+        """
+        sets the non-default rcParams to updated_params
+        """
+        self.updated_params = {}
+
+        for key, val in mpl.pyplot.rcParams.items():
+            default = mpl.rcParamsDefault[key]
+            if default != val:
+                self.updated_params[key] = val
+
+        if 'axes.prop_cycle' in self.updated_params:
+            cycler_ = self.updated_params.pop('axes.prop_cycle')
+            cycler_colors = cycler_.by_key()['color']
+            self.updated_params['cycler-prop-cycles'] = cycler_colors
+
+    def add_theme(self, theme_name):
+        """
+        saves the non-default params of the theme locally to /themes/[theme_name].txt
+
+        Input
+        =====
+            theme_name (string): the name of the theme
+        """
+        self.set_updated_rcparams()
+        with open(path.dirname(path.abspath(__file__))+'/themes/'+theme_name+'.txt', 'w') as file:
+            print(str(self.updated_params).replace(', ', ',\n'), file=file)
