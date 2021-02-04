@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/PyPi%20latest%20relsease-v0.1.1-brightgreen)](https://pypi.org/project/themepy/)
+[![](https://img.shields.io/badge/PyPi%20latest%20relsease-v0.2.0-brightgreen)](https://pypi.org/project/themepy/)
 
 # ThemePy
 
@@ -40,7 +40,7 @@ import themepy
 
 # Examples
 
-This is still in early development. A python version >= 3.7 is required (just clone the env). There is an unstable version (0.0.8) available through pip - `pip install thempy`.
+This is still in early development. A python version >= 3.7 is required (just clone the env). There is an unstable version (0.2.0) available through pip - `pip install thempy`.
 
 We can get started straight away by instantiating a Theme class. We can do this without passing a specific theme, this will use matplotlib's defaults.
 
@@ -203,13 +203,81 @@ plt.show()
 
 # Adding Themes
 
-to do
+It is now possible to add themes locally directly from scripts / notebooks. Simply create your customised plot using the theme accessors and save it by using `add_theme(<name>)`
+
+For example:
+```python
+theme = themepy.Theme()
+
+theme.set_theme() # ensures set to default matplotlib rcParams
+
+
+(theme
+ .set_font("Kulim Park", color="white") # sets default font and text color
+ .set_pips(False) # turns off tick lines
+ .set_spines("off", which=["top","right"], color="white") # turns off top and right ax borders & sets color of others to white
+ .set_background("#2c3042") # sets the fig, axis, and savefig facecolors
+ .set_ticklabel_size(12) # sets size of tick labels
+ .set_plot_colors("#DC5349","#26D8FF","#D3CFBD")  # sets first three colors of cycler and also colors of theme.primary_color, theme.secondary_color, and theme.tertiary_color
+)
+
+```
+
+After plotting and being happy with how this theme looks, we can save it locally for future use:
+
+```python
+theme.add_theme("midnight")
+```
+
+If theme name already exists, users will be asked to overwrite existing theme or not. Once saved, users can then use this newly created theme by using
+
+```python
+theme.set_theme("midnight")
+
+# creating random data
+np.random.seed(402)
+x = np.random.uniform(0,1,30)
+y = np.random.uniform(0,1,30)
+
+
+# create plot
+fig, ax = plt.subplots(figsize=(8,8))
+ax.set_title("This is a title using a brand new theme",
+             loc="left", **theme.title_font, fontsize=18, fontweight="bold")
+
+
+ax.grid(linewidth=.25, zorder=1, color="grey")
+
+ax.scatter(x[:10],y[:10],
+           edgecolors=theme.background,
+           s=400,
+           zorder=2)
+
+ax.scatter(x[10:20],y[10:20],
+           edgecolors=theme.background,
+           s=400,
+           zorder=2)
+
+ax.scatter(x[20:],y[20:],
+           edgecolors=theme.background,
+           s=400,
+           zorder=2)
+
+ax.set_xlim(0,1)
+ax.set_ylim(0,1)
+
+ax.set_xlabel("Test x Label", fontsize=16)
+ax.set_ylabel("Test y Label", fontsize=16)
+
+plt.tight_layout()
+plt.show()
+```
+
+![](sample/add_theme_sample.png)
+
 # To Do:
 
-- theme colors should be appended to the start of cycler instead of replacing
-- add add_theme() function
-- add remove_theme() function
 - Docstring on Theme class
-- Add Adding Themes section to readme
 - Testing script
 - Apply code formatting and guidelines for contributors
+

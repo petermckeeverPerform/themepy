@@ -45,22 +45,70 @@ class Theme:
 
         return self
 
-    def set_font(self, fontfamily=None):
+    def set_background(self, facecolor, figure=True, ax=True):
+        """[summary]
+
+        Args:
+            facecolor (string): color to set as background
+            figure (bool, optional): Apply to matplotlib figure Defaults to True.
+            ax (bool, optional): Apply to matplotlib ax background. Defaults to True.
         """
-        Sets the font that will be used for plotting.
+        if figure:
+            mpl.rcParams['figure.facecolor'] = facecolor
+            mpl.rcParams['savefig.facecolor'] = facecolor
+        if ax:
+            mpl.rcParams['axes.facecolor'] = facecolor
 
-        Input
-        =====
-        font_name: str - name of font that is
-                  currently availble in matplotlib
+        self.background = facecolor
 
-        Returns
-        =======
-        updated self.fontfamily
+        return self
+
+    def set_plot_colors(self, primary_color=None, secondary_color=None,
+                        tertiary_color=None, fourth_color=None,
+                        fifth_color=None, sixth_color=None):
+        """[summary]
+
+        Args:
+            primary_color ([type], optional): [description]. Defaults to None.
+            secondary_color ([type], optional): [description]. Defaults to None.
+            tertiary_color ([type], optional): [description]. Defaults to None.
+            fourth_color ([type], optional): [description]. Defaults to None.
+            fifth_color ([type], optional): [description]. Defaults to None.
+            sixth_color ([type], optional): [description]. Defaults to None.
+        """
+
+        current_cycler = [x['color'] for x in list(mpl.rcParams['axes.prop_cycle'])]
+        set_colors = [primary_color, secondary_color,
+                      tertiary_color, fourth_color,
+                      fifth_color, sixth_color]
+        i = 0
+        for color in set_colors:
+            if color is not None:
+                current_cycler[i] = color
+            i += 1
+        
+        mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=current_cycler)
+        self.primary_color = current_cycler[0]
+        self.secondary_color = current_cycler[1]
+        self.tertiary_color = current_cycler[2]
+        self.fourth_color = current_cycler[3]
+
+        return self
+
+    def set_font(self, fontfamily=None, color=None):
+        """Sets the font that will be used for plotting.
+
+        Args:
+            fontfamily (str, optional): name of font that is
+                  currently availble in matplotlib. Defaults to None.
+            color (string, optional): color as name, hexcode, or RGB. Defaults to None.
+
+        Returns:
+            updated self.fontfamily
                 self.title_font
                 self.body_font
-
         """
+
         if fontfamily is None:
             self.fontfamily = mpl.rcParams['font.family']
         else:
@@ -69,9 +117,20 @@ class Theme:
             self.title_font = {"fontfamily": fontfamily}
             self.body_font = {"fontfamily": fontfamily}
 
+        if color is None:
+            self.fontcolor = mpl.rcParams['axes.labelcolor']
+        else:
+            self.fontcolor = color
+            mpl.rcParams['text.color'] = color
+            mpl.rcParams['axes.labelcolor'] = color
+            mpl.rcParams['xtick.color'] = color
+            mpl.rcParams['ytick.color'] = color
+            self.title_font.update({"color": color})
+            self.body_font.update({"color": color})
+
         return self
 
-    def set_title_font(self, title_font=None):
+    def set_title_font(self, title_font=None, color=None):
         """
         Allows us to use a different font with **kwarg.
         This does not automatically change the title font.
@@ -94,15 +153,19 @@ class Theme:
         =======
         updated self.title_font
 
+
         """
         if title_font is None:
             self.title_font = {"fontfamily": mpl.rcParams['font.family']}
         else:
             self.title_font = {"fontfamily": title_font}
 
+        if color is not None:
+            self.title_font.update({"color": color})
+
         return self
 
-    def set_body_font(self, body_font=None):
+    def set_body_font(self, body_font=None, color=None):
         """
         Allows us to use a different font with **kwarg.
         This does not automatically change the body font.
@@ -132,6 +195,9 @@ class Theme:
         else:
             self.body_font = {"fontfamily": body_font}
 
+        if color is not None:
+            self.body_font.update({"color": color})
+
         return self
 
     def set_pips(self, state=True):
@@ -158,7 +224,9 @@ class Theme:
 
         return self
 
-    def set_spines(self, state="on", which=["top", "right", "bottom", "left"]):
+    def set_spines(self, state="on",
+                   which=["top", "right", "bottom", "left"],
+                   color=None):
         """
         Sets the spines on or off. A method in matplotlib
         to turn spines off might be:
@@ -167,6 +235,7 @@ class Theme:
         =====
         state: str - "on" or "off"
         which: list - spines to be turned on or off.
+        color: (optional) str - option to change color of spine
 
         Returns
         =======
@@ -179,6 +248,9 @@ class Theme:
 
         for spine in which:
             mpl.rcParams['axes.spines.'+spine] = switch
+
+        if color is not None:
+            mpl.rcParams['axes.edgecolor'] = color
 
         return self
 
@@ -237,6 +309,20 @@ class Theme:
         =====
             theme_name (string): the name of the theme
         """
-        self.set_updated_rcparams()
-        with open(path.dirname(path.abspath(__file__))+'/themes/'+theme_name+'.txt', 'w') as file:
-            print(str(self.updated_params).replace(', ', ',\n'), file=file)
+        if theme_name in list_themes():
+            choice = input(f"A theme named {theme_name} already exists, would you like to overwrite? [y/n]")
+            if "y" in choice.lower():
+                self.set_updated_rcparams()
+                with open(path.dirname(path.abspath(__file__))+'/themes/'+theme_name+'.txt', 'w') as file:
+                    print(str(self.updated_params).replace(', ', ',\n'), file=file)
+
+                print(f"Theme {theme_name} successfully overwritten")
+            else:
+                print("please use a different theme name")
+
+        else:
+            self.set_updated_rcparams()
+            with open(path.dirname(path.abspath(__file__))+'/themes/'+theme_name+'.txt', 'w') as file:
+                print(str(self.updated_params).replace(', ', ',\n'), file=file)
+
+            print(f"Theme {theme_name} successfully added locally")

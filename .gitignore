@@ -15,3 +15,4 @@ env
 .DS_Store
 themepy/.DS_Store
 dist/.DS_Store
+change.log
