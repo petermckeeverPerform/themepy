@@ -1,4 +1,4 @@
-[![](https://img.shields.io/badge/PyPi%20latest%20relsease-v0.2.2-brightgreen)](https://pypi.org/project/themepy/)
+[![](https://img.shields.io/badge/PyPi%20latest%20relsease-v0.3.0-brightgreen)](https://pypi.org/project/themepy/)
 
 # ThemePy
 
@@ -40,7 +40,7 @@ import themepy
 
 # Examples
 
-This is still in early development. A python version >= 3.7 is required (just clone the env). There is an unstable version (0.2.2) available through pip - `pip install thempy`.
+This is still in early development. A python version >= 3.7 is required (just clone the env). There is an unstable version (0.3.0) available through pip - `pip install thempy`.
 
 We can get started straight away by instantiating a Theme class. We can do this without passing a specific theme, this will use matplotlib's defaults.
 

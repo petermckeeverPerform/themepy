@@ -1,1 +1,2 @@
 include thempy/themes/*.txt
+include readme.md
