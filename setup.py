@@ -1,11 +1,8 @@
 import setuptools
 
-with open("readme.md", "r") as f:
-    readme = f.read()
-
 setuptools.setup(
     name="themepy",
-    version ="0.2.1",
+    version ="0.2.2",
     author ="Peter McKeever",
     author_email ="hello@petermckeever.com",
     description ="a tools suite to manage themes in matplotlib",
