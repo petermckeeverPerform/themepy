@@ -16,6 +16,8 @@
 'grid.color': '#e6e6e6',
 'grid.linewidth': 0.25,
 'lines.linewidth': 1.0,
+'savefig.bbox': 'tight',
+'savefig.edgecolor': '#f9f9f9',
 'savefig.facecolor': '#f9f9f9',
 'text.color': '#503939',
 'xtick.bottom': False,
