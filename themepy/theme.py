@@ -86,7 +86,7 @@ class Theme:
             if color is not None:
                 current_cycler[i] = color
             i += 1
-        
+
         mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=current_cycler)
         self.primary_color = current_cycler[0]
         self.secondary_color = current_cycler[1]
@@ -226,7 +226,8 @@ class Theme:
 
     def set_spines(self, state="on",
                    which=["top", "right", "bottom", "left"],
-                   color=None):
+                   color=None,
+                   linewidth=None):
         """
         Sets the spines on or off. A method in matplotlib
         to turn spines off might be:
@@ -251,6 +252,9 @@ class Theme:
 
         if color is not None:
             mpl.rcParams['axes.edgecolor'] = color
+
+        if linewidth is not None:
+            mpl.rcParams['axes.linewidth'] = linewidth
 
         return self
 
@@ -282,6 +286,55 @@ class Theme:
 
         else:
             raise KeyError("{} is not a valid arg. Must be 'both' or one of 'x' or 'y'".format(which))
+
+        return self
+
+    def set_grid(self, state="on", which=None, axis=None, color=None,
+                 alpha=None, linestyle=None, linewidth=None):
+        """
+        Sets the grid on or off.
+
+        Input
+        =====
+        state: str - "on" or "off"
+        which: (optional) str - {'major', 'minor', 'both'}
+        axis: (optional) str - {"both", "x", "y"}
+        color: (optional) str - grid color
+        alpha: (optional) str - grid alpha
+        linestyle: (optional) str - grid linestyle
+        linewidth: (optional) str - grid linewidth
+
+        Returns
+        =======
+        updated mpl.rcParams for the axes grid
+
+        """
+        if state == "on":
+            switch = True
+        else:
+            switch = False
+
+        mpl.rcParams['axes.grid'] = switch
+        mpl.rcParams['polaraxes.grid'] = switch
+        mpl.rcParams['axes3d.grid'] = switch
+
+        if which is not None:
+            mpl.rcParams['axes.grid.which'] = which
+
+        if color is not None:
+            mpl.rcParams['grid.color'] = color
+
+        if axis is not None:
+            mpl.rcParams['axes.grid.axis'] = axis
+
+        if alpha is not None:
+            mpl.rcParams['grid.alpha'] = alpha
+
+        if linestyle is not None:
+            mpl.rcParams['grid.linestyle'] = linestyle
+
+        if linewidth is not None:
+            mpl.rcParams['grid.linewidth'] = linewidth
 
         return self
 
