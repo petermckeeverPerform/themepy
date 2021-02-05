@@ -200,13 +200,14 @@ class Theme:
 
         return self
 
-    def set_pips(self, state=True):
+    def set_pips(self, state=True, color=None):
         """
         Show or hide tick lines on plots.
 
         Input
         =====
-        state: bool - True of False
+        state: bool - True or False
+        color: str
 
         Returns
         =======
@@ -221,6 +222,10 @@ class Theme:
 
         else:
             raise NameError("unrecognised state. Must be one of True/False or 'on'/'off")
+
+        if color is not None:
+            mpl.rcParams['xtick.color'] = color
+            mpl.rcParams['ytick.color'] = color
 
         return self
 
