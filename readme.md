@@ -22,7 +22,7 @@ The main goal of this package is to have professional, well thought out themes a
 
 1. Fork this repo and create branch from `master`
 2. Clone the environment
-3. Add you theme .txt file to the themes folder
+3. Add your theme .txt file to the themes folder
 4. Test these to ensure that they function as expected
 5. Commit code and create a pull request outlining your new theme, including its name. Do not commit images.
 
