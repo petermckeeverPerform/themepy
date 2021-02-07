@@ -1,7 +1,7 @@
 import matplotlib as mpl
 
 
-def get_rcParams_containing(string="", return_values=True):
+def get_rcparams_containing(string="", return_values=True):
     """helper to search rcParams for keys containing a specific string, eg. "axes"
 
     Args:
