@@ -349,7 +349,7 @@ class Theme:
         """
         self.updated_params = {}
 
-        for key, val in mpl.pyplot.rcParams.items():
+        for key, val in mpl.rcParams.items():
             default = mpl.rcParamsDefault[key]
             if default != val:
                 self.updated_params[key] = val
