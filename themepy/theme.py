@@ -86,7 +86,7 @@ class Theme:
             if color is not None:
                 current_cycler[i] = color
             i += 1
-        
+
         mpl.rcParams['axes.prop_cycle'] = mpl.cycler(color=current_cycler)
         self.primary_color = current_cycler[0]
         self.secondary_color = current_cycler[1]
@@ -200,13 +200,14 @@ class Theme:
 
         return self
 
-    def set_pips(self, state=True):
+    def set_pips(self, state=True, color=None):
         """
         Show or hide tick lines on plots.
 
         Input
         =====
-        state: bool - True of False
+        state: bool - True or False
+        color: str
 
         Returns
         =======
@@ -222,11 +223,16 @@ class Theme:
         else:
             raise NameError("unrecognised state. Must be one of True/False or 'on'/'off")
 
+        if color is not None:
+            mpl.rcParams['xtick.color'] = color
+            mpl.rcParams['ytick.color'] = color
+
         return self
 
     def set_spines(self, state="on",
                    which=["top", "right", "bottom", "left"],
-                   color=None):
+                   color=None,
+                   linewidth=None):
         """
         Sets the spines on or off. A method in matplotlib
         to turn spines off might be:
@@ -251,6 +257,9 @@ class Theme:
 
         if color is not None:
             mpl.rcParams['axes.edgecolor'] = color
+
+        if linewidth is not None:
+            mpl.rcParams['axes.linewidth'] = linewidth
 
         return self
 
@@ -285,13 +294,71 @@ class Theme:
 
         return self
 
+    def set_grid(self, state="on", which=None, axis=None, color=None,
+                 alpha=None, linestyle=None, linewidth=None):
+        """
+        Sets the grid on or off.
+
+        Input
+        =====
+        state: str - "on" or "off"
+        which: (optional) str - {'major', 'minor', 'both'}
+        axis: (optional) str - {"both", "x", "y"}
+        color: (optional) str - grid color
+        alpha: (optional) str - grid alpha
+        linestyle: (optional) str - grid linestyle
+        linewidth: (optional) str - grid linewidth
+
+        Returns
+        =======
+        updated mpl.rcParams for the axes grid
+
+        """
+        if state == "on":
+            switch = True
+        else:
+            switch = False
+
+        mpl.rcParams['axes.grid'] = switch
+        mpl.rcParams['polaraxes.grid'] = switch
+        mpl.rcParams['axes3d.grid'] = switch
+
+        if which is not None:
+            mpl.rcParams['axes.grid.which'] = which
+
+        if color is not None:
+            mpl.rcParams['grid.color'] = color
+
+        if axis is not None:
+            mpl.rcParams['axes.grid.axis'] = axis
+
+        if alpha is not None:
+            mpl.rcParams['grid.alpha'] = alpha
+
+        if linestyle is not None:
+            mpl.rcParams['grid.linestyle'] = linestyle
+
+        if linewidth is not None:
+            mpl.rcParams['grid.linewidth'] = linewidth
+
+        return self
+
+    def set_rcparams(self, *args):
+        """general purpose function to update the rcParams
+
+        example:
+        theme.set_rcparams({'axes.titlepad': 20, 'axes.titleweight': 'bold'})
+        """
+        mpl.rcParams.update(*args)
+        return self
+
     def set_updated_rcparams(self):
         """
         sets the non-default rcParams to updated_params
         """
         self.updated_params = {}
 
-        for key, val in mpl.pyplot.rcParams.items():
+        for key, val in mpl.rcParams.items():
             default = mpl.rcParamsDefault[key]
             if default != val:
                 self.updated_params[key] = val

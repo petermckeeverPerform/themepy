@@ -22,7 +22,7 @@ The main goal of this package is to have professional, well thought out themes a
 
 1. Fork this repo and create branch from `master`
 2. Clone the environment
-3. Add you theme .txt file to the themes folder
+3. Add your theme .txt file to the themes folder
 4. Test these to ensure that they function as expected
 5. Commit code and create a pull request outlining your new theme, including its name. Do not commit images.
 
@@ -66,6 +66,8 @@ y = np.random.uniform(0,1,50)
  .set_pips() # we could set the tick marks on the x and y axis on or off here
  .set_spines() # we could show or hide the borders of the plot here
  .set_ticklabel_size() # we could change the size of the x and y tick labels here
+ .set_grid() # we could set the grid on or off and set params like color and linewidth
+ .set_rcparams() # we could also set any matplotlib rcParams here
 )
 
 
