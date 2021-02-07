@@ -66,6 +66,8 @@ y = np.random.uniform(0,1,50)
  .set_pips() # we could set the tick marks on the x and y axis on or off here
  .set_spines() # we could show or hide the borders of the plot here
  .set_ticklabel_size() # we could change the size of the x and y tick labels here
+ .set_grid() # we could set the grid on or off and set params like color and linewidth
+ .set_rcparams() # we could also set any matplotlib rcParams here
 )
 
 

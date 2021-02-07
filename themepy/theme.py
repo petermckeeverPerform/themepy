@@ -347,7 +347,7 @@ class Theme:
         """general purpose function to update the rcParams
 
         example:
-        theme.set_rcparams({'axes.titlepad': '20', 'axes.titleweight': 'bold'})
+        theme.set_rcparams({'axes.titlepad': 20, 'axes.titleweight': 'bold'})
         """
         mpl.rcParams.update(*args)
         return self
