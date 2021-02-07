@@ -343,6 +343,15 @@ class Theme:
 
         return self
 
+    def set_rcparams(self, *args):
+        """general purpose function to update the rcParams
+
+        example:
+        theme.set_rcparams({'axes.titlepad': '20', 'axes.titleweight': 'bold'})
+        """
+        mpl.rcParams.update(*args)
+        return self
+
     def set_updated_rcparams(self):
         """
         sets the non-default rcParams to updated_params
