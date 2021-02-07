@@ -16,6 +16,7 @@
 'grid.color': '#cdcdcd',
 'grid.linewidth': 0.4,
 'lines.linewidth': 2.5,
+'patch.linewidth': 1.75,
 'savefig.facecolor': 'w',
 'text.color': '#222222',
 'xtick.bottom': False,
