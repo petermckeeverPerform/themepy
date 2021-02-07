@@ -36,6 +36,9 @@ def set_params(self, theme_name=None):
 
     self.theme_name = None
 
+    # resetting to remove potential artifacts from previous themes
+    mpl.rcParams.update(mpl.rcParamsDefault)
+
     if theme_name is None:
         mpl.rcParams.update(mpl.rcParamsDefault)
         self.theme_name = "Matplotlib"
