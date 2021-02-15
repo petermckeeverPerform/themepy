@@ -40,7 +40,7 @@ import themepy
 
 # Examples
 
-This is still in early development. A python version >= 3.7 is required (just clone the env). There is an unstable version (0.3.1) available through pip - `pip install thempy`.
+This is still in early development. A python version >= 3.7 is required (just clone the env). There is an unstable version (0.3.1) available through pip - `pip install themepy`.
 
 We can get started straight away by instantiating a Theme class. We can do this without passing a specific theme, this will use matplotlib's defaults.
 
